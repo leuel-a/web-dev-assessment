@@ -17,11 +17,11 @@ export default function Footer() {
             <div className="w-8/12 mx-auto ">
                 <div className="flex gap-10">
                     {Object.entries(links).map(([key, value]) => (
-                        <div>
+                        <div key={key}>
                             <h4 className="text-md text-white mb-3">{lodashCapitalize(key)}</h4>
                             <ul className="flex flex-col gap-2">
                                 {value.map(({name}) => (
-                                    <li className="text-white text-sm">
+                                    <li key={name} className="text-white text-sm">
                                         <Link href="#">{name}</Link>
                                     </li>
                                 ))}

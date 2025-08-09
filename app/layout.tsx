@@ -1,9 +1,9 @@
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import type {Metadata} from 'next';
 import localFont from 'next/font/local';
 import Footer from '@/components/blocks/Footer';
 import Header from '@/components/blocks/Header';
 import './globals.css';
+import {Providers} from './providers';
 
 export const metadata: Metadata = {
     title: 'Food Wagen',
@@ -15,8 +15,6 @@ const poppins = localFont({
     variable: '--font-poppins',
 });
 
-const queryClient = new QueryClient();
-
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -25,11 +23,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${poppins.variable} font-poppins`}>
-                <QueryClientProvider client={queryClient}>
+                <Providers>
                     <Header />
                     {children}
                     <Footer />
-                </QueryClientProvider>
+                </Providers>
             </body>
         </html>
     );
