@@ -2,7 +2,7 @@ import Image from 'next/image';
 import {FiltersButton} from '@/components/pages/Home/FiltersButton';
 import {FindMealInputSearch} from '@/components/pages/Home/FindMealInputSearch';
 
-export default function Page() {
+export default async function Page() {
     return (
         <main className="bg-amber-500 w-full overflow-hidden">
             <div className="w-8/12 py-10 mx-auto flex items-center justify-between">
