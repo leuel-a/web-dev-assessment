@@ -12,7 +12,7 @@ export default function Header() {
                     height={30}
                 />
 
-                <Button>Add Meal</Button>
+                <Button className="bg-amber-500">Add Meal</Button>
             </header>
         </div>
     );
