@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import {FiltersButton} from '@/components/pages/Home/FiltersButton';
 import {FindMealInputSearch} from '@/components/pages/Home/FindMealInputSearch';

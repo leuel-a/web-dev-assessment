@@ -1,3 +1,4 @@
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import type {Metadata} from 'next';
 import localFont from 'next/font/local';
 import Footer from '@/components/blocks/Footer';
@@ -14,6 +15,8 @@ const poppins = localFont({
     variable: '--font-poppins',
 });
 
+const queryClient = new QueryClient();
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -22,9 +25,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${poppins.variable} font-poppins`}>
-                <Header />
+                <QueryClientProvider client={queryClient}>
+                    <Header />
                     {children}
-                <Footer />
+                    <Footer />
+                </QueryClientProvider>
             </body>
         </html>
     );
